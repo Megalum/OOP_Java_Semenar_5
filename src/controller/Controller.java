@@ -24,7 +24,7 @@ public class Controller {
 	}
 
 	private static Contact addContact(String message){
-		String separator = splitLine(message);
+		String separator = separatorLine(message);
 		List<String> line = new ArrayList<>(Arrays.asList(message.split(separator)));
 		User user = new User(line.get(0), line.get(1));
 		ArrayList<Phone> phones = new ArrayList<>();
@@ -35,7 +35,7 @@ public class Controller {
 		return contact;
 	}
 
-	private static String splitLine(String message){
+	private static String separatorLine(String message){
 		String f = "";
 		for (char s: message.toCharArray()) {
 			if(!Character.isLetter(s)){
